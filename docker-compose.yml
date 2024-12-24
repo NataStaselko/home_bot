@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  home_bot_app:
+    build:
+      dockerfile: Dockerfile
+    container_name: home_bot_app
+    env_file:
+      - .env
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
